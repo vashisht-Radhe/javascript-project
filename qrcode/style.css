@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000 0%, #ffffff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 400px;
+  padding: 25px 35px;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.container p {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.container input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #494eea;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0 20px;
+  outline: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.container input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+.container button {
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  background: #494eea;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s;
+}
+
+.container button:hover {
+  background: #3b44e0;
+}
+
+#imgBox {
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+#imgBox.show-img {
+  max-height: 300px;
+  opacity: 1;
+  border: 1px solid #d1d1d1;
+  margin-top: 10px;
+}
+
+#imgBox img {
+  width: 100%;
+  display: block;
+  padding: 10px;
+}
+
+/* Error effect */
+.error {
+  border-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+  box-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+  animation: shake 0.1s linear 5;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 13px;
+  margin-top: -15px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
